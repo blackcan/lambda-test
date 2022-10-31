@@ -20,5 +20,6 @@ jobs:
           GOOS=linux GOARCH=amd64 go build -o hello-world
       - name: Deploy
         run: |
+          terraform init
           terraform apply -auto-approve
           echo "$$(terraform output -raw base_url)"
