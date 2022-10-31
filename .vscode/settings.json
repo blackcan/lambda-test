@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-action.json": [
+            "file:///Users/kenlin/my-projects/lambda-test/.github/workflow/deploy.yml",
+            "file:///Users/kenlin/my-projects/lambda-test/.github/workflow/deploy-aws.yml"
+        ]
+    }
+}
