@@ -13,5 +13,10 @@ jobs:
           go-version: '1.19'
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Build
+        working-directory: hello-world
+        run: |
+          go get .
+          GOOS=linux GOARCH=amd64 go build -o hello-world
       - name: Deploy
-        run: make deploy
+        run: terraform deploy -auto-approve
