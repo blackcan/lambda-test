@@ -13,8 +13,16 @@ terraform {
       version = "~> 2.2.0"
     }
   }
-
   required_version = "~> 1.0"
+
+  backend "s3" {
+    bucket         = "blackcan-terraform-state"
+    key            = "global/s3/lambda-test/terraform.tfstate"
+    region         = "ap-northeast-1"
+
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
 }
 
 provider "aws" {
@@ -152,5 +160,3 @@ resource "aws_lambda_permission" "api_gw" {
 
   source_arn = "${aws_apigatewayv2_api.lambda.execution_arn}/*/*"
 }
-
-
