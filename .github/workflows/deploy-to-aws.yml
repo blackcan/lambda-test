@@ -13,8 +13,8 @@ jobs:
           go-version: '1.19'
       - name: Install Make
         run: |
-          apt-get update
-          apt-get install make
+          sudo apt-get update
+          sudo apt-get install make
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Configure AWS Credentials
